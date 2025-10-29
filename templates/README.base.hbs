@@ -1,0 +1,91 @@
+# {{project_title}}
+
+{{#if tagline}}
+> {{tagline}}
+{{/if}}
+
+{{#if live_demo_url}}
+**Live Demo:** {{live_demo_url}}
+{{/if}}
+
+{{#if screenshot_url}}
+![Project preview]({{screenshot_url}})
+{{/if}}
+
+---
+
+{{#if description_short}}
+{{description_short}}
+{{/if}}
+
+## Table of Contents
+- [Overview](#overview)
+{{#if features}}- [Features](#features){{/if}}
+{{#if tech_stack_badges}}- [Tech Stack](#tech-stack){{/if}}
+{{#if quick_start}}- [Quick Start](#quick-start){{/if}}
+{{#if project_structure}}- [Project Structure](#project-structure){{/if}}
+{{#if license.name}}- [License](#license){{/if}}
+{{#if contact.author}}- [Contact](#contact){{/if}}
+
+---
+
+## Overview
+{{#if overview_bullets}}
+{{#each overview_bullets}}
+- {{this}}
+{{/each}}
+{{else}}
+This project README was auto-generated.
+{{/if}}
+
+{{#if features}}
+## Features
+{{#each features}}
+- {{this}}
+{{/each}}
+{{/if}}
+
+{{#if tech_stack_badges}}
+## Tech Stack
+<p>
+  {{#each tech_stack_badges}}
+  <img src="{{this.img}}" alt="{{this.alt}}" />
+  {{/each}}
+</p>
+{{/if}}
+
+{{#if quick_start}}
+## Quick Start
+{{#if quick_start.steps}}
+{{#each quick_start.steps}}
+1. {{this}}
+{{/each}}
+{{/if}}
+{{#if quick_start.code_blocks}}
+{{#each quick_start.code_blocks}}
+```{{this.lang}}
+{{{this.code}}}
+```
+{{/each}}
+{{/if}}
+{{/if}}
+
+{{#if project_structure}}
+## Project Structure
+```text
+{{{project_structure}}}
+```
+{{/if}}
+
+{{#if license.name}}
+## License
+**{{license.name}} License**
+{{/if}}
+
+{{#if contact.author}}
+## Contact
+{{#if contact.company}}**Company:** {{contact.company}}{{/if}}
+{{#if contact.author}}**Author:** {{contact.author}}{{/if}}
+{{#if contact.email}}**Email:** {{contact.email}}{{/if}}
+{{#if contact.website}}**Website:** {{contact.website}}{{/if}}
+{{/if}}

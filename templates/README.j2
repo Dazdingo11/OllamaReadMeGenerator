@@ -1,0 +1,82 @@
+# {{ project_title }}
+
+{% if tagline -%}
+> {{ tagline }}
+{%- endif %}
+
+{% if live_demo_url -%}
+**Live Demo:** {{ live_demo_url }}
+{%- endif %}
+
+{% if screenshot_url -%}
+![Project preview]({{ screenshot_url }})
+{%- endif %}
+
+---
+
+{% if description_short %}{{ description_short }}{% endif %}
+
+## Table of Contents
+- [Overview](#overview)
+{% if features %}- [Features](#features){% endif %}
+{% if tech_stack_plain %}- [Tech Stack](#tech-stack){% endif %}
+{% if quick_start %}- [Quick Start](#quick-start){% endif %}
+{% if project_structure %}- [Project Structure](#project-structure){% endif %}
+{% if license and license.name %}- [License](#license){% endif %}
+
+---
+
+## Overview
+{% if overview_bullets %}
+{% for item in overview_bullets -%}
+- {{ item }}
+{% endfor %}
+{% elif description_short %}
+{{ description_short }}
+{% else %}
+This README is generated from repository signals and concise summaries.
+{% endif %}
+
+{% if features %}
+## Features
+{% for f in features -%}
+- {{ f }}
+{% endfor %}
+{% endif %}
+
+{% if tech_stack_plain %}
+## Tech Stack
+{{ tech_stack_plain | join(', ') }}
+{% endif %}
+
+{% if quick_start %}
+## Quick Start
+{% if quick_start.steps %}
+{% for s in quick_start.steps %}1. {{ s }}
+{% endfor %}
+{% endif %}
+{% if quick_start.code_blocks %}
+{% for b in quick_start.code_blocks %}
+```{{ b.lang }}
+{{ b.code }}
+```
+{% endfor %}
+{% endif %}
+{% endif %}
+
+{% if project_structure %}
+## Project Structure
+```text
+{{ project_structure }}
+```
+{% endif %}
+
+{% if key_file_summaries %}
+## Key Files Summaries
+{{ key_file_summaries }}
+{% endif %}
+
+{% if license and license.name %}
+## License
+**{{ license.name }} License**
+{% endif %}
